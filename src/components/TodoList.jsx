@@ -3,8 +3,12 @@ import { Table, TableContainer, Tbody, Th, Thead, Tr } from '@chakra-ui/react'
 import SingleTodo from './SingleTodo'
 
 const TodoList = ({ todos, handleToggle, handleDelete }) => {
+
+    if (todos.length < 1) {
+        return 'Please add some Todos!'
+    }
     return (
-        <TableContainer>
+        < TableContainer >
             <Table variant='simple'>
                 <Thead>
                     <Tr bgColor='royalblue'>
@@ -22,7 +26,7 @@ const TodoList = ({ todos, handleToggle, handleDelete }) => {
                     ))}
                 </Tbody>
             </Table>
-        </TableContainer>
+        </TableContainer >
     )
 }
 
